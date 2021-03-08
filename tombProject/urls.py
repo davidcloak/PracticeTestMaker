@@ -20,6 +20,7 @@ from tombApp import views
 urlpatterns = [
     #url(r'^admin/', admin.site.urls),
     url(r'^$', views.home_page, name='home'),
+    url(r'^make$', views.make_page, name='make'),
     url(r'^test$', views.test_page, name='test'),
     url(r'^take$', views.take_page, name='take'),
     url(r'^result$', views.check, name='result'),

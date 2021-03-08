@@ -9,6 +9,9 @@ savedTest['Something'] = "nothing lol"
 def home_page(request):
     return render(request, 'Home.html')
 
+def make_page(request):
+    return render(request, 'MakeTest.html')
+
 def take_page(request):
     if request.method == 'POST':
         name = request.POST.get("name")

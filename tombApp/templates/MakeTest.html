@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <style>
+        textarea{
+            width: 100%;
+        }
+
+        #banner{
+          position: fixed;
+          right: 1em;
+          top: 1em;
+          padding: 1em;
+          padding-bottom: 0;
+          width: 22em;
+          background-color: rgba(0, 51, 255);
+          border-top-left-radius: 0.5em;
+          border-top-right-radius: 0.5em;
+          z-index: 100;
+        }
+        #bannerPT2{
+          position: fixed;
+          top: 3.75em;
+          right: 1em;
+          padding: 1em;
+          padding-top: 0.25em;
+          width: 22em;
+          background-color: rgba(0, 51, 255);
+          border-bottom-left-radius: 0.5em;
+          border-bottom-right-radius: 0.5em;
+          z-index: 100;
+        }
+
+        .card{
+          width: 18rem;
+        }
+
+        @media (max-width: 658px) {
+          #spacer{
+            height: 8em;
+          }
+          
+          .card{
+            width: 100%;
+          }
+          .card-body input{
+            width: 100%;
+          }
+
+        }
+    </style>
+    <title>Free Practice Test Maker :)</title>
+  </head>
+  <body>
+    <div id="spacer"></div>
+
+    <div id="banner">
+      <button onclick="AddOpenEnded()">Add Oppen Ended</button>
+      <button onclick="AddMultipeChoise()">Add Multiple Choise</button>
+    </div>
+
+    <form method="POST" action="/test">
+      {% csrf_token %}
+      <div id="bannerPT2">
+        <input placeholder="Test Name" name="name">
+        <button id="submit" name="QAmount" value="0">Submit</button>
+      </div>
+      <div id="testMaker"></div>
+    </form>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <script src="https://davidcloak.github.io/DjangoStaticFile/PracticeTests/script.js"></script>
+  </body>
+</html>
