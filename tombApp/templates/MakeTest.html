@@ -13,26 +13,21 @@
             width: 100%;
         }
 
-        #banner, #bannerPT2{
+        #ATagBtn{
+          padding: 2px;
+          background-color: gainsboro;
+          border: 2px solid black;
+        }
+
+        #banner{
           position: fixed;
+          top: 1em;
           right: 1em;
           padding: 1em;
-          padding-bottom: 0;
-          width: 21em;
+          width: fit-content;
           background-color: rgba(0, 51, 255);
           z-index: 100;
-        }
-        #banner{
-          top: 1em;
-          border-top-left-radius: 0.5em;
-          border-top-right-radius: 0.5em;
-        }
-        #bannerPT2{
-          top: 3.75em;
-          padding: 1em;
-          padding-top: 0.25em;
-          border-bottom-left-radius: 0.5em;
-          border-bottom-right-radius: 0.5em;
+          border-radius: 0.5em;
         }
 
         .card{
@@ -44,7 +39,7 @@
             height: 8em;
           }
           
-          #banner, #bannerPT2{
+          #banner{
             width: 24em;
           }
 
@@ -59,16 +54,19 @@
   <body>
     <div id="spacer"></div>
 
-    <div id="banner">
-      <button onclick="AddOpenEnded()">Add Open Ended</button>
-      <button onclick="AddMultipeChoise()">Add Multiple Choise</button>
-    </div>
+    
 
     <form method="POST" action="/test">
       {% csrf_token %}
-      <div id="bannerPT2">
-        <input placeholder="Test Name" name="name">
-        <button id="submit" name="QAmount" value="0">Submit</button>
+      <div id="banner">
+        <div style="margin-bottom: 0.5em;">
+          <a id="ATagBtn" onclick="AddOpenEnded()">Add Open Ended</a>
+          <a id="ATagBtn" onclick="AddMultipeChoise()">Add Multiple Choise</a>
+        </div>
+        <div>
+          <input placeholder="Test Name" name="name">
+          <button id="submit" name="QAmount" value="0">Submit</button>
+        </div>
       </div>
       <div id="testMaker"></div>
     </form>
