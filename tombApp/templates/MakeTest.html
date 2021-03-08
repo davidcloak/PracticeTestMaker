@@ -13,31 +13,26 @@
             width: 100%;
         }
 
-        #banner{
+        #banner, #bannerPT2{
           position: fixed;
           right: 1em;
-          top: 1em;
           padding: 1em;
           padding-bottom: 0;
-          max-width: 25em;
-          min-width: 22em;
+          width: 21em;
           background-color: rgba(0, 51, 255);
-          border-top-left-radius: 0.5em;
-          border-top-right-radius: 0.5em;
           z-index: 100;
         }
+        #banner{
+          top: 1em;
+          border-top-left-radius: 0.5em;
+          border-top-right-radius: 0.5em;
+        }
         #bannerPT2{
-          position: fixed;
           top: 3.75em;
-          right: 1em;
           padding: 1em;
           padding-top: 0.25em;
-          max-width: 25em;
-          min-width: 22em;
-          background-color: rgba(0, 51, 255);
           border-bottom-left-radius: 0.5em;
           border-bottom-right-radius: 0.5em;
-          z-index: 100;
         }
 
         .card{
@@ -49,9 +44,10 @@
             height: 8em;
           }
           
-          .card{
-            width: 100%;
+          #banner, #bannerPT2{
+            width: 25em;
           }
+
           .card-body input{
             width: 100%;
           }
