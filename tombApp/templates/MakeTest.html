@@ -11,6 +11,7 @@
     <style>
         textarea{
             width: 100%;
+            min-height: 10em;
         }
 
         #ATagBtn{
@@ -26,31 +27,57 @@
           right: 1em;
           padding: 1em;
           width: fit-content;
-          height: fit-content;
           background-color: rgba(0, 51, 255);
           z-index: 100;
           border-radius: 0.5em;
         }
 
         .card{
-          width: 18rem;
+          width: 60%;
+          margin: 2em;
+        }
+        .card-body input{
+            width: 100%;
+        }
+        .card-body a{
+          padding: 2px;
+          background-color: gainsboro;
+          border: 2px solid black;
+        }
+        #btnStyle{
+          padding-top: 0.25em;
+          padding-bottom: 0.25em;
         }
 
-        @media (pointer:none), (pointer:coarse) {
+        /* Adjusted Screen sizes */
+        @media (max-width: 900px){
           #spacer{
             height: 8em;
           }
-
+          .card{
+            margin: auto;
+          }
           #banner{
-            width: 100%;
+            width: 60%;
+            text-align: center;
+            right: 20%;
+            left: auto;
+          }
+        }
+
+        /* Mobile */
+        @media (pointer:none), (pointer:coarse) {
+          #banner{
+            width: 99%;
             text-align: center;
             right: 0;
           }
-
-          .card-body input{
-            width: 100%;
+          #spacer{
+            height: 8em;
           }
-
+          .card{
+            width: 99%;
+          }
         }
     </style>
     <title>Free Practice Test Maker :)</title>
