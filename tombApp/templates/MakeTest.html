@@ -36,9 +36,15 @@
           width: 18rem;
         }
 
-        @media (max-width: 658px) {
+        @media (pointer:none), (pointer:coarse) {
           #spacer{
             height: 8em;
+          }
+
+          #banner{
+            width: 100%;
+            text-align: center;
+            right: 0;
           }
 
           .card-body input{
