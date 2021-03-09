@@ -19,6 +19,7 @@
     <title>Test Selector</title>
   </head>
   <body>
+    {{ nav|safe }}
     <form method="POST" action="/take">
         {% csrf_token %}
         <input placeholder="Test Name" name="name">
