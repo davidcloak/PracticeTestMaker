@@ -40,6 +40,36 @@
         #info button{
           float: right;
         }
+        /* Adjusted Screen sizes */
+        @media (max-width: 900px){
+          #spacer{
+            height: 8em;
+          }
+          .card{
+            margin: auto;
+          }
+          #banner{
+            width: 60%;
+            text-align: center;
+            right: 20%;
+            left: auto;
+          }
+        }
+
+        /* Mobile */
+        @media (pointer:none), (pointer:coarse) {
+          #banner{
+            width: 99%;
+            text-align: center;
+            right: 0;
+          }
+          #spacer{
+            height: 8em;
+          }
+          .card{
+            width: 99%;
+          }
+        }
     </style>
     <title>Results :)/:(</title>
   </head>
