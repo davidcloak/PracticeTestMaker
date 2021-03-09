@@ -4,7 +4,7 @@ from django.http import HttpResponse
 savedTest = {}
 savedTest['Something'] = "nothing lol"
 # to randamize change how the test is saved by switching from saving the whole display to saving a dictianary with saved cards
-savedTest['nav'] = '<div style="height: 3.25em;"></div><nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark"><div class="container-fluid"><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarNav"><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="/">Home</a></li><li class="nav-item"><a class="nav-link" href="/make">Make A Test</a></li><li class="nav-item"><a class="nav-link" href="/take">Take A Made Test</a></li></ul></div></div></nav>'
+savedTest['nav'] = '<style>.nav-link:hover{/*just cause*/font-weight: bold;}</style><div style="height: 4.15em;"></div><nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-color: rgb(15,33,80); font-size: 1.25em;"><div class="container-fluid"><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarNav"><ul class="navbar-nav"><li class="nav-item"><a class="nav-link"  style="color: rgb(125,233,118);" href="/">Home</a></li><li class="nav-item"><a class="nav-link" style="color: rgb(125,233,118);" href="/make">Make A Test</a></li><li class="nav-item"><a class="nav-link" style="color: rgb(125,233,118);" href="/take">Take A Made Test</a></li></ul></div></div></nav>'
 
 # Create your views here.
 def home_page(request):
@@ -115,7 +115,7 @@ def check(request):
                     
                     display += '<input type="hidden" name="qType'+str(x)+'" value="'+qType+'">'
                     display += '<input type="hidden" name="qAmount'+str(x)+'" value="'+amount+'">'
-                    display += '<p style="color: green;">Selected Awnser: ' + awnser +' Correct: '+correct+'</p>'
+                    display += '<p style="">Selected Awnser: ' + awnser +' Correct: '+correct+'</p>'
                 else:
                     a += 1
                     question = request.POST.get('question'+str(x))

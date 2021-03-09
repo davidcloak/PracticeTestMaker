@@ -9,11 +9,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
     <style>
-        textarea{
-            width: 100%;
-            min-height: 10em;
-        }
-
         #ATagBtn{
           padding: 2px;
           background-color: gainsboro;
@@ -27,17 +22,9 @@
           right: 1em;
           padding: 1em;
           width: fit-content;
-          background-color: rgba(0, 51, 255);
+          background-color: rgba(15,33,80, 0.90);
           z-index: 100;
           border-radius: 0.5em;
-        }
-
-        .card{
-          width: 60%;
-          margin: 2em;
-        }
-        .card-body input{
-            width: 100%;
         }
         .card-body a{
           padding: 2px;
@@ -47,6 +34,32 @@
         #btnStyle{
           padding-top: 0.25em;
           padding-bottom: 0.25em;
+        }
+
+        form{
+          padding: 2em;
+          /* background-color: rgb(78, 199, 241);  */
+          /* border: 2px solid black; */
+          width: 60%;
+          margin: 2em;
+        }
+
+        .card{
+          width: 100%;
+          background-color: rgb(78, 199, 241);
+          margin-bottom: 1em;
+        }
+        .card-body input{
+          width: 100%;
+          background-color: rgb(129, 234, 255);
+        }
+        textarea{
+          width: 100%;
+          min-height: 10em;
+          background-color: rgb(129, 234, 255);
+        }
+        body{
+          background-color: rgb(215,233,118);
         }
 
         /* Adjusted Screen sizes */
@@ -63,6 +76,9 @@
             right: 20%;
             left: auto;
           }
+          form{
+            margin: auto;
+          }
         }
 
         /* Mobile */
@@ -70,7 +86,7 @@
           #banner{
             width: 99%;
             text-align: center;
-            right: auto;
+            right: 0;
           }
           #spacer{
             height: 8em;
@@ -78,23 +94,33 @@
           .card{
             width: 99%;
           }
+          form{
+            width: 100%;
+            margin: 0;
+          }
         }
     </style>
     <title>Free Practice Test Maker :)</title>
   </head>
   <body>
+    <script>
+      function formColor(){
+        var form = document.getElementById("form");
+        form.setAttribute("style", "background-color: rgb(78, 199, 241); margin-bottom: 0.5em; border: 2px solid black;");
+      }
+    </script>
     {{ nav|safe }}
     
     <div id="spacer"></div>
 
     
 
-    <form method="POST" action="/test">
+    <form method="POST" id="form" action="/test">
       {% csrf_token %}
       <div id="banner">
         <div style="margin-bottom: 0.5em;">
-          <a id="ATagBtn" onclick="AddOpenEnded()">Add Open Ended</a>
-          <a id="ATagBtn" onclick="AddMultipeChoise()">Add Multiple Choise</a>
+          <a id="ATagBtn" onclick="AddOpenEnded(), formColor()">Add Open Ended</a>
+          <a id="ATagBtn" onclick="AddMultipeChoise(), formColor()">Add Multiple Choise</a>
         </div>
         <div>
           <input placeholder="Test Name" name="name">
