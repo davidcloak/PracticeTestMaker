@@ -11,20 +11,49 @@
     <style>
         textarea{
             width: 100%;
+            min-height: 10em;
+        }
+        #center{
+          width: 75%;
+          margin: auto;
+          padding: 1em;
         }
         .card{
-          width: 18rem;
+          width: 95%;
+          margin: auto;
+        }
+        .card-body p{
+          width: 100%;
+        }
+        form{
+          border: 2px solid black;
+        }
+        #info{
+          margin-bottom: 1em;
+          width: fit-content;
+        }
+        #info h4{
+          margin: 0;
+          display: inline-block;
+          margin-right: 1em;
+        }
+        #info button{
+          float: right;
         }
     </style>
 
     <title>Free Practice Test Taker :)</title>
   </head>
   <body>
-    
-    <h1>Good Luck 👍</h1>
-    <form method="POST" action="/result">
+    <div id="center" style="border: 0px solid rgba(1,1,1,0);">
+      <h1>Good Luck 👍</h1>
+    </div>
+    <form method="POST" id="center" action="/result">
         {% csrf_token %}
-        <button name="name" value="{{name}}">Check Test</button>
+        <div id="info">
+          <h4>{{name}}</h4>
+          <button name="name" value="{{name}}">Check Test</button>
+        </div>
         <h6>Quick note: Open Ended Questions are not checked but displayed at the end for you to deside on how you did.</h6>
         {{ display|safe }}
     </form>

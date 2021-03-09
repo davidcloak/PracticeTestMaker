@@ -11,9 +11,34 @@
     <style>
         textarea{
             width: 100%;
+            min-height: 10em;
+        }
+        #center{
+          width: 75%;
+          margin: auto;
+          padding: 1em;
         }
         .card{
-          width: 18rem;
+          width: 95%;
+          margin: auto;
+        }
+        .card-body p{
+          width: 100%;
+        }
+        form{
+          border: 2px solid black;
+        }
+        #info{
+          margin-bottom: 1em;
+          width: fit-content;
+        }
+        #info h4{
+          margin: 0;
+          display: inline-block;
+          margin-right: 1em;
+        }
+        #info button{
+          float: right;
         }
     </style>
     <title>Results :)/:(</title>
@@ -23,9 +48,12 @@
       <h6>Open Ended Questions are not checked and hence are not counted for the amount above.</h6>
       <p>Rember to check your Open Ended Question yourself below.</p>
 
-    <form method="POST" action="/take">
+    <form method="POST" id="center" action="/take">
         {% csrf_token %}
-        <button name="name" value="{{name}}">Retake Test</button>
+        <div id="info">
+          <h4>{{name}}</h4>
+          <button name="name" value="{{name}}">Retake Test</button>
+        </div>
         {{ display|safe }}
     </form>
 

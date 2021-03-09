@@ -41,7 +41,7 @@ def test_page(request):
             #savedTest['qType'+str(x)] = qType #Saved
             if qType == 'Multi':
                 question = request.POST.get('question'+str(x))
-                display += '<div class="card" style="width: 18rem;"> <div class="card-body"> <h5 class="card-title">'+ question +'</h5>'
+                display += '<div class="card"> <div class="card-body"> <h5 class="card-title">'+ question +'</h5>'
                 
                 #savedTest['question'+str(x)] = question #Saved
 
@@ -65,7 +65,7 @@ def test_page(request):
                 display += '</div> </div>'
             elif qType == 'Open':
                 question = request.POST.get('question'+str(x))
-                display += '<div class="card" style="width: 18rem;"> <div class="card-body"> <h5 class="card-title">'+ question +'</h5>'
+                display += '<div class="card"> <div class="card-body"> <h5 class="card-title">'+ question +'</h5>'
                 display += '<input type="hidden" name="qType'+str(x)+'" value="'+qType+'">'
                 display += '<input type="hidden" name="questionA'+str(x)+'" value="'+question+'">'
                 desired = request.POST.get('desired'+str(x))
@@ -104,7 +104,7 @@ def check(request):
                     c += 1
                     question = request.POST.get('question'+str(x))
                     questionA = request.POST.get('questionA'+str(x))
-                    display += '<div class="card" style="width: 18rem;"> <div class="card-body"> <h5 class="card-title">'+ questionA +'</h5>'
+                    display += '<div class="card"> <div class="card-body"> <h5 class="card-title">'+ questionA +'</h5>'
 
                     amount = request.POST.get('qAmount'+str(x))
                     
@@ -114,7 +114,7 @@ def check(request):
                 else:
                     a += 1
                     question = request.POST.get('question'+str(x))
-                    display += '<div class="card" style="width: 18rem;"> <div class="card-body" style="background-color: rgba(255, 66, 82, 0.8);"> <h5 class="card-title">'+ question +'</h5>'
+                    display += '<div class="card"> <div class="card-body" style="background-color: rgba(255, 66, 82, 0.8);"> <h5 class="card-title">'+ question +'</h5>'
 
                     amount = request.POST.get('qAmount'+str(x))
                     
@@ -125,12 +125,12 @@ def check(request):
                 display += '</div> </div>'
             elif qType == 'Open':
                 question = request.POST.get('questionA'+str(x))
-                display += '<div class="card" style="width: 18rem;"> <div class="card-body"> <h5 class="card-title">'+ question +'</h5>'
+                display += '<div class="card"> <div class="card-body"> <h5 class="card-title">'+ question +'</h5>'
                 display += '<input type="hidden" name="questionA'+str(x)+'" value="'+question+'">'
                 awnser = request.POST.get('awnser'+str(x))
                 desired = request.POST.get('desired'+str(x))
-                display += '<p name="desired'+str(x)+'" style="border: 0.25em solid black;">Desired Awnser: '+desired+'</p>'
-                display += '<p name="awnser'+str(x)+'" style="border: 0.25em solid black;">Your Awnser: '+awnser+'</p>'
+                display += '<p name="desired'+str(x)+'" style="border: 0.15em solid black;"><strong>Desired Awnser:</strong> '+desired+'</p>'
+                display += '<p name="awnser'+str(x)+'" style="border: 0.15em solid black;"><strong>Your Awnser:</strong> '+awnser+'</p>'
                 display += '</div> </div>'
         
         name = request.POST.get("name")
